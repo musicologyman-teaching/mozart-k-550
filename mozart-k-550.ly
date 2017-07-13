@@ -120,3 +120,36 @@ excerptB = \relative bes {
     \midi { \tempo 2 = 100 }
   }
 }
+
+
+\book {
+  \paper {
+    #(set-paper-size "size C" )
+    indent = #0
+    ragged-last = ##f
+  }
+  \score {
+    << 
+      \new Staff 
+      \with { midiInstrument = #"acoustic grand" }
+      \excerptA
+      \new Staff
+      \with { midiInstrument = #"acoustic grand" }
+      { \clef bass \excerptB }
+      \new Staff
+      \with { midiInstrument = #"acoustic grand" }
+      { \clef bass \transpose c c, \excerptB }
+    >>
+    \layout {
+      \context {
+        \Score
+        \remove Bar_number_engraver
+      }
+      \context {
+        \Staff
+        \remove Time_signature_engraver
+      }
+    }
+    \midi { \tempo 2 = 100 }
+  }
+}
