@@ -83,16 +83,13 @@ right = \relative c'' {
        c (es2 \stemUp a,4) \stemDown bes4 } >>
    \bar ""
 
-
-
-
 }
 
 
 \score {
   <<
     \new Staff = "right" \with {
-      midiInstrument = "acoustic grand"
+      midiInstrument = "synthstrings 2"
       \remove Time_signature_engraver
     } \right
   >>

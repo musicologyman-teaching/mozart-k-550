@@ -82,8 +82,8 @@ right = \relative c''' {
    bes-. d-. f-. \stopGroup r8
      \override HorizontalBracket.color = #red
      f \startGroup |
-   \repeat unfold 3  { e f g aes bes c des \stopGroup f, \startGroup }
-   e f g aes bes c des \stopGroup e, |
+   \repeat unfold 3  { e f g a bes c des \stopGroup f, \startGroup }
+   e f g a bes c des \stopGroup e, |
    f2
 
 }
@@ -92,7 +92,7 @@ right = \relative c''' {
 \score {
   <<
     \new Staff = "right" \with {
-      midiInstrument = "acoustic grand"
+      midiInstrument = "string ensemble 1"
       \remove Time_signature_engraver
     } \right
   >>

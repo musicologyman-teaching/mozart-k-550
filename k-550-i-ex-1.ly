@@ -123,7 +123,7 @@ left = \relative c'' {
 \score {
   <<
     \new Staff = "right" \with {
-      midiInstrument = "acoustic grand"
+      midiInstrument = "string ensemble 2"
       \remove Time_signature_engraver
     } \right
   >>

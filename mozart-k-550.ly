@@ -39,6 +39,12 @@ excerptB = \relative bes {
   \repeat unfold 2 { d f } d [f]
 }
 
+excerptC = \relative c' {
+ \globalI
+ <bes g>8 \p _\markup \italic Violas ^\markup \bold { Molto Allegro } <bes g> <g' bes,> <g bes,>
+   \repeat unfold 3 { <bes, g> <bes g> <g' bes,> <g bes,> }
+}
+
 \book {
   \paper {
     #(set-paper-size "size A" )
@@ -72,7 +78,7 @@ excerptB = \relative bes {
     ragged-last = ##f
   }
   \score {
-    << 
+    <<
       \new Staff
       \with { midiInstrument = #"acoustic grand" }
       { \clef bass \excerptB }
@@ -99,7 +105,7 @@ excerptB = \relative bes {
     ragged-last = ##f
   }
   \score {
-    << 
+    <<
       \new Staff
       \with { midiInstrument = #"acoustic grand" }
       { \clef bass \excerptB }
@@ -129,8 +135,8 @@ excerptB = \relative bes {
     ragged-last = ##f
   }
   \score {
-    << 
-      \new Staff 
+    <<
+      \new Staff
       \with { midiInstrument = #"acoustic grand" }
       \excerptA
       \new Staff
@@ -139,6 +145,32 @@ excerptB = \relative bes {
       \new Staff
       \with { midiInstrument = #"acoustic grand" }
       { \clef bass \transpose c c, \excerptB }
+    >>
+    \layout {
+      \context {
+        \Score
+        \remove Bar_number_engraver
+      }
+      \context {
+        \Staff
+        \remove Time_signature_engraver
+      }
+    }
+    \midi { \tempo 2 = 100 }
+  }
+}
+
+\book {
+  \paper {
+    #(set-paper-size "size B" )
+    indent = #0
+    ragged-last = ##t
+  }
+  \score {
+    <<
+      \new Staff
+      \with { midiInstrument = #"string ensemble 2" }
+      \excerptC
     >>
     \layout {
       \context {
