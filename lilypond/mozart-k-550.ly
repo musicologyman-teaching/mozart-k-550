@@ -13,6 +13,8 @@
 #(set! paper-alist (cons '("size F" . (cons (* 6 in) (* 2.25 in))) paper-alist))
 #(set! paper-alist (cons '("size G" . (cons (* 7 in) (* 2.0 in))) paper-alist))
 #(set! paper-alist (cons '("size H" . (cons (* 7 in) (* 5.0 in))) paper-alist))
+#(set! paper-alist (cons '("size I" . (cons (* 5 in) (* 1.25 in))) paper-alist))
+#(set! paper-alist (cons '("size J" . (cons (* 6 in) (* 1.25 in))) paper-alist))
 
 globalI = {
   \key g \minor
@@ -43,6 +45,14 @@ excerptC = \relative c' {
  \globalI
  <bes g>8 \p _\markup \italic Violas ^\markup \bold { Molto Allegro } <bes g> <g' bes,> <g bes,>
    \repeat unfold 3 { <bes, g> <bes g> <g' bes,> <g bes,> }
+}
+
+excerptF = \relative c' {
+ \globalI
+ \partial 4
+ \repeat unfold 2 { d8 d d2 r4 }
+ \repeat unfold 2 { d8 d d4 }
+ d8 d d2
 }
 
 \book {
@@ -171,6 +181,33 @@ excerptC = \relative c' {
       \new Staff
       \with { midiInstrument = #"string ensemble 2" }
       \excerptC
+    >>
+    \layout {
+      \context {
+        \Score
+        \remove Bar_number_engraver
+      }
+      \context {
+        \Staff
+        \remove Time_signature_engraver
+      }
+    }
+    \midi { \tempo 2 = 100 }
+  }
+}
+
+
+\book {
+  \paper {
+    #(set-paper-size "size J" )
+    indent = #0
+    ragged-last = ##t
+  }
+  \score {
+    <<
+      \new Staff
+      \with { midiInstrument = #"string ensemble 2" }
+      \excerptF
     >>
     \layout {
       \context {
