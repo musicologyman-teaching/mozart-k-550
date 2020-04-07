@@ -1,6 +1,8 @@
 *.pdf
 *.midi
 *.png
+*.mid
+*.m4a
 /png
 /mozart-k-550-audio
 /mozart-k-550-images
