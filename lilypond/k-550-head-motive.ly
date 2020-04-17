@@ -1,4 +1,4 @@
-\version "2.18.2"
+\version "2.20.0"
 
 \header {
   % Remove default LilyPond tagline
@@ -43,7 +43,7 @@ global = {
 }
 
 turnNotesRed = #(define-music-function
-                 (parser location notes)
+                 (notes)
                  (ly:music?)
                  #{
                    \override NoteHead.color = #red
@@ -60,7 +60,7 @@ turnNotesRed = #(define-music-function
                  #})
 
 setAnalysisBracket = #(define-music-function
-                       (parser location)
+                       ()
                        ()
                        #{
                           \override HorizontalBracket.direction = #UP

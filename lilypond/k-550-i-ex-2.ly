@@ -1,4 +1,4 @@
-\version "2.18.2"
+\version "2.20.0"
 
 \header {
   % Remove default LilyPond tagline
@@ -20,27 +20,14 @@
   }
 }
 
-\layout {
-  \context {
-    \Staff \RemoveEmptyStaves
-  }
-}
-
 global = {
   \key g \minor
   \time 2/2
 
 }
 
-\layout {
-  \context {
-    \Voice
-    \consists "Horizontal_bracket_engraver"
-  }
-}
-
 colorNotes = #(define-music-function
-                 (parser location col notes)
+                 (col notes)
                  (color? ly:music?)
                  #{
                    \override NoteHead.color = #col
@@ -56,35 +43,29 @@ colorNotes = #(define-music-function
                    \revert Accidental.color
                  #})
 
-setAnalysisBracket = #(define-music-function
-                       (parser location)
-                       ()
-                       #{
-                          \override HorizontalBracket.direction = #UP
-                          \override HorizontalBracket.color = #blue
-                          \override HorizontalBracket.thickness = #3.0
-                          \override HorizontalBracket.bracket-flare = #'(0.0 . 0.0)
-                          \override HorizontalBracket.padding = #1.0
-                       #})
 
 blueText = \override TextScript.color = #blue
 
 
-right = \relative c'' {
-  \global
-  <<
-      {s1 \blueText \colorNotes #blue { es2. ^\markup { \italic "Woodwinds" } (f16 es d c  bes4) } s s2 | s1 * 4 s1 }
-      \\
-      { f'2. \p _\markup { \italic "Strings" } (e4 es!) s s2 |
-       \override Script.direction = #UP
-       \once \override Rest.transparent = ##t
-       r4 bes-. \slurNeutral bes (c) d4. (es8) c4 b4\rest
-       g'2. (fis4 f e es d) |
-       c (es2 \stemUp a,4) \stemDown bes4 } >>
-   \bar ""
-
+right = \relative f'' {
+  \time 2/2
+  \key g \minor
+  \context Voice = "2" { f2. \p _\markup \italic "Strings" (e4 }
+  << 
+    { \stemUp \blueText \colorNotes #blue { 
+       es2. ^\markup \italic "Woodwinds" (f16 es d c bes4) 
+      }
+    }
+    \\
+   \context Voice="2" { \stemDown es!4) s s2 s4 }
+  >>
+  bes4-. bes (c) |
+  d4. (es8) c4 r |
+  g'2. (fis4 |
+  f! e es d) |
+  c (es2 a,4) |
+  bes
 }
-
 
 \score {
   <<

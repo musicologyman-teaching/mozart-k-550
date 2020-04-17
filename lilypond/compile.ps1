@@ -1,0 +1,14 @@
+lilypond --png mozart-k-550.ly
+lilypond --png k-550-i-ex-1-incipit.ly
+lilypond --png development.lyl.ly
+lilypond --png k-550-head-motive-3.ly
+lilypond --png mozart-k-550-p1.ly
+lilypond --png k-550-i-ex-2.ly
+lilypond --png k-550-i-ex-closing-2.ly
+lilypond --png k-550-i-tr.ly
+lilypond --png k-550-i-ex-1-annotated.ly
+lilypond --png k-550-iv.ly
+lilypond --png k-550-i-ex-1.ly
+lilypond --png k-550-i-ex-closing.ly
+lilypond --png k-550-i-p2.ly
+lilypond --png k-550-head-motive.ly
