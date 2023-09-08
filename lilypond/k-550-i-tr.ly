@@ -1,4 +1,4 @@
-\version "2.20.0"
+\version "2.24.2"
 
 \header {
   % Remove default LilyPond tagline
@@ -113,11 +113,11 @@ withoutBracketsAbbr = \relative c''' {
    c4-. es-. g-. c,-. |
    bes-. d-. f-. r8 f |
    e f g a bes c des \stopStaff
-     \once \override Stem #'transparent = ##t
-     \once \override NoteHead #'transparent = ##t
-     \once \override TextScript #'Y-offset = #0.0
-     \once \override TextScript #'X-offset = #2.0
-     \once \override TextScript #'font-size = #5.0
+     \once \override Stem.transparent = ##t
+     \once \override NoteHead.transparent = ##t
+     \once \override TextScript.Y-offset = #0.0
+     \once \override TextScript.X-offset = #2.0
+     \once \override TextScript.font-size = #5.0
      f, ^\markup \italic "etc."
      \bar ""
 }

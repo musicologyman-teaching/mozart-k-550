@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-\version "2.20.0"
+\version "2.24.2"
 
 
 \header {
@@ -209,7 +209,7 @@ Applying conversion: 2.19.2, 2.19.7, 2.19.11, 2.19.16, 2.19.22,
 2.19.80, 2.20.0
 %}
 =======
-\version "2.20.0"
+\version "2.24.2"
 
 \header {
   % Remove default LilyPond tagline

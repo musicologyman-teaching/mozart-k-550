@@ -1,3 +1,4 @@
+\version "2.24.2"
 
 setAnalysisBracket = #(define-music-function
    (parser location)

@@ -1,4 +1,4 @@
-\version "2.20.0"
+\version "2.24.2"
 
 \header {
   tagline = ##f
@@ -26,7 +26,7 @@ excerptA = \relative d' {
  \global
  \partial 4
  \setAnalysisBracket 
- \override HorizontalBracket #'Y-offset = #6.2
+ \override HorizontalBracket.Y-offset = #6.2
  d \p \startGroup ^\markup \bold { {\fontsize #5.0 P}\sub{\fontsize #2.0 HEAD} } (g) bes-. d-. g-.
  bes2 (a4) \stopGroup 
    cis,8 ^\markup \bold { {\fontsize #5.0 P}\sub{\fontsize #2.0 CADENTIAL} } \f \startGroup e
